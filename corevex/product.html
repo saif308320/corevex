@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corevex Pro 15 | Buy & Configure</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="announce">Free 2-day shipping · Configure RAM and storage below</div>
+  <header class="nav">
+    <a class="logo" href="index.html">COREVEX <b>COMPUTING</b></a>
+    <ul id="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a class="on" href="product.html">Pro 15</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-r">
+      <button class="cart" data-open-cart>Cart <i data-cart-count>0</i></button>
+      <button class="ham" id="menuToggle">☰</button>
+    </div>
+  </header>
+  <div class="wrap page pdp">
+    <div>
+      <div class="g-main"><img id="mainImg" src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1600&q=80" alt="Corevex Pro 15 laptop"></div>
+      <div class="thumbs" id="thumbs">
+        <img class="on" src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80" data-full="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1600&q=80" alt="Front view">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80" data-full="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80" alt="In use">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80" data-full="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80" alt="Engineering">
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&q=80" data-full="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1600&q=80" alt="Build">
+      </div>
+    </div>
+    <aside class="buy">
+      <div class="k">Flagship</div>
+      <h1 style="font-family:var(--display);font-size:36px;margin:8px 0">Corevex Pro 15</h1>
+      <p style="color:var(--muted)">CNC graphite. 24-core Horizon silicon. 22-hour mixed battery.</p>
+      <div class="live" id="livePrice">$2,299</div>
+      <div class="opt"><span>Memory</span><div id="ramOpts"></div></div>
+      <div class="opt"><span>Storage</span><div id="ssdOpts"></div></div>
+      <div style="display:flex;gap:10px;align-items:center;margin:16px 0">
+        <button class="btn btn-g" id="minus">−</button><span id="qty">1</span><button class="btn btn-g" id="plus">+</button>
+      </div>
+      <button class="btn btn-p" id="addCart" style="width:100%">Add to cart</button>
+      <p class="toast" id="toast"></p>
+    </aside>
+  </div>
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <h2>Benchmarks vs last-gen Pro 14</h2>
+      <p class="sub">Bars fill when you scroll to this section.</p>
+      <div class="bench" style="margin-top:24px">
+        <div>Cinebench multi · 18,420 pts</div><div class="bar"><i data-w="92"></i></div>
+        <div>Blender BMW · 1m 12s</div><div class="bar"><i data-w="78"></i></div>
+        <div>4K H.265 export · 3.1x realtime</div><div class="bar"><i data-w="86"></i></div>
+        <div>1080p battery loop · 22 hours</div><div class="bar"><i data-w="70"></i></div>
+      </div>
+      <h2 style="margin-top:48px">Specifications</h2>
+      <table class="sp">
+        <tr><td>Display</td><td>15.3" Mini-LED, 120Hz, 1600 nits, 100% DCI-P3</td></tr>
+        <tr><td>Processor</td><td>Corevex Horizon 24 (16P+8E), up to 5.4GHz</td></tr>
+        <tr><td>Graphics</td><td>Arc Ultra + optional discrete 8GB</td></tr>
+        <tr><td>Memory</td><td>16 / 32 / 64GB LPDDR5X</td></tr>
+        <tr><td>Storage</td><td>512GB / 1TB / 2TB PCIe 5.0</td></tr>
+        <tr><td>Battery</td><td>99.6Wh, 140W GaN brick</td></tr>
+        <tr><td>Weight</td><td>1.48 kg · CNC graphite</td></tr>
+      </table>
+      <h2>Reviews</h2>
+      <div class="revs" style="margin-top:16px">
+        <article class="rev"><div class="stars">★★★★★</div><p>“Held a 4K timeline on battery through a transatlantic flight.”</p><strong>Lena Park</strong></article>
+        <article class="rev"><div class="stars">★★★★★</div><p>“The milled lid is the first laptop that feels like a tool.”</p><strong>Marcus Hale</strong></article>
+        <article class="rev"><div class="stars">★★★★☆</div><p>“Configurability is honest. Price is not cheap.”</p><strong>Priya Shah</strong></article>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="wrap"><div>900 Silicon Way, Austin, TX 78701 · sales@corevexlaptops.com · +1 512 555 0143</div></div>
+  </footer>
+  <div class="shade" id="drawerBg"></div>
+  <aside class="drawer" id="drawer">
+    <div class="dh"><strong>Cart</strong><button class="btn btn-g" id="drawerClose">Close</button></div>
+    <div class="db" id="drawerBody"></div>
+    <div class="df"><span id="drawerTotal">$0</span><a class="btn btn-p" href="cart.html">View cart</a></div>
+  </aside>
+  <script src="js/app.js"></script>
+  <script>
+    const ram = [{l:"16GB",a:0},{l:"32GB",a:300},{l:"64GB",a:700}];
+    const ssd = [{l:"512GB",a:0},{l:"1TB",a:200},{l:"2TB",a:500}];
+    let r=0,s=0,q=1;
+    function price(){ return 2299 + ram[r].a + ssd[s].a; }
+    function paint(){
+      document.getElementById("ramOpts").innerHTML = ram.map((o,i)=>`<button class="chip ${i===r?'on':''}" data-i="${i}">${o.l}${o.a?' +$'+o.a:''}</button>`).join("");
+      document.getElementById("ssdOpts").innerHTML = ssd.map((o,i)=>`<button class="chip ${i===s?'on':''}" data-i="${i}">${o.l}${o.a?' +$'+o.a:''}</button>`).join("");
+      document.getElementById("livePrice").textContent = CVX.money(price());
+      document.querySelectorAll("#ramOpts .chip").forEach(b=>b.onclick=()=>{r=+b.dataset.i;paint();});
+      document.querySelectorAll("#ssdOpts .chip").forEach(b=>b.onclick=()=>{s=+b.dataset.i;paint();});
+    }
+    paint();
+    document.getElementById("plus").onclick=()=>{q++;document.getElementById("qty").textContent=q;};
+    document.getElementById("minus").onclick=()=>{q=Math.max(1,q-1);document.getElementById("qty").textContent=q;};
+    document.getElementById("addCart").onclick=()=>{
+      CVX.add({id:"pro-15",name:"Corevex Pro 15",price:price(),img:CVX.PRODUCTS["pro-15"].img,qty:q,config:ram[r].l+" / "+ssd[s].l});
+      document.getElementById("toast").textContent="Added to cart.";
+      CVX.openDrawer();
+    };
+    document.querySelectorAll("#thumbs img").forEach(img=>{
+      img.onclick=()=>{
+        document.querySelectorAll("#thumbs img").forEach(x=>x.classList.remove("on"));
+        img.classList.add("on");
+        document.getElementById("mainImg").src=img.dataset.full;
+      };
+    });
+    const io=new IntersectionObserver((ents)=>{
+      ents.forEach(e=>{ if(e.isIntersecting){ e.target.querySelectorAll("i").forEach(i=>i.style.width=i.dataset.w+"%"); }});
+    },{threshold:0.3});
+    document.querySelectorAll(".bench").forEach(s=>io.observe(s));
+  </script>
+</body>
+</html>

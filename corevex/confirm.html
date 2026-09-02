@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order confirmed | Corevex</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="logo" href="index.html">COREVEX <b>COMPUTING</b></a>
+    <ul id="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="product.html">Pro 15</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-r">
+      <button class="cart" data-open-cart>Cart <i data-cart-count>0</i></button>
+      <button class="ham" id="menuToggle">☰</button>
+    </div>
+  </header>
+  <div class="wrap page" style="text-align:center;padding:80px 0">
+    <div class="k">Austin fulfillment</div>
+    <h1 style="font-family:var(--display);font-size:48px;margin:12px 0">Thank you. Order confirmed.</h1>
+    <p id="oid" style="color:var(--blue);letter-spacing:.16em;font-weight:700"></p>
+    <div id="items" style="max-width:440px;margin:24px auto;text-align:left"></div>
+    <a class="btn btn-p" href="index.html">Back to home</a>
+  </div>
+  <footer><div class="wrap">900 Silicon Way, Austin, TX 78701 · sales@corevexlaptops.com · +1 512 555 0143</div></footer>
+  <div class="shade" id="drawerBg"></div>
+  <aside class="drawer" id="drawer">
+    <div class="dh"><strong>Cart</strong><button class="btn btn-g" id="drawerClose">Close</button></div>
+    <div class="db" id="drawerBody"></div>
+    <div class="df"><span id="drawerTotal">$0</span><a class="btn btn-p" href="cart.html">View cart</a></div>
+  </aside>
+  <script src="js/app.js"></script>
+  <script>
+    const o = JSON.parse(sessionStorage.getItem("corevex_order") || "null");
+    if (!o) location.href = "shop.html";
+    else {
+      document.getElementById("oid").textContent = o.id;
+      document.getElementById("items").innerHTML = o.items.map(i => `<p style="display:flex;justify-content:space-between"><span>${i.name} — ${i.config}</span><span>${CVX.money(i.price*i.qty)}</span></p>`).join("") + `<p style="font-weight:800;margin-top:12px">Paid ${CVX.money(o.total)}</p>`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support | Corevex Computing</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="logo" href="index.html">COREVEX <b>COMPUTING</b></a>
+    <ul id="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="product.html">Pro 15</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a class="on" href="support.html">Support</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-r">
+      <button class="cart" data-open-cart>Cart <i data-cart-count>0</i></button>
+      <button class="ham" id="menuToggle">☰</button>
+    </div>
+  </header>
+  <div class="wrap page" style="max-width:800px">
+    <div class="k">Support</div>
+    <h1 style="font-family:var(--display);font-size:42px;margin:8px 0 24px">Answers from the people who mill the lids.</h1>
+    <div class="faq">
+      <div class="open"><button>How long is the warranty?</button><div class="a">Three years, depot or Austin on-site for Pro series. Accidental coverage is optional at checkout.</div></div>
+      <div><button>Can I upgrade RAM later?</button><div class="a">Memory is soldered LPDDR5X for thermals and battery. Choose capacity now. Storage is user-replaceable PCIe 5.0.</div></div>
+      <div><button>What is the lead time?</button><div class="a">Stock configs ship in 2–4 days. Custom RAM/storage builds leave Silicon Way in 7–10 days.</div></div>
+      <div><button>Do you ship internationally?</button><div class="a">Yes. Duties are estimated at checkout. Freight is complimentary in the continental US.</div></div>
+      <div><button>How quiet is the Pro 15?</button><div class="a">Under 28 dBA at 40W. Conversation-level at 120W sustained.</div></div>
+    </div>
+  </div>
+  <footer><div class="wrap">900 Silicon Way, Austin, TX 78701 · sales@corevexlaptops.com · +1 512 555 0143</div></footer>
+  <div class="shade" id="drawerBg"></div>
+  <aside class="drawer" id="drawer">
+    <div class="dh"><strong>Cart</strong><button class="btn btn-g" id="drawerClose">Close</button></div>
+    <div class="db" id="drawerBody"></div>
+    <div class="df"><span id="drawerTotal">$0</span><a class="btn btn-p" href="cart.html">View cart</a></div>
+  </aside>
+  <script src="js/app.js"></script>
+  <script>document.querySelectorAll(".faq > div > button").forEach(b => b.onclick = () => b.parentElement.classList.toggle("open"));</script>
+</body>
+</html>

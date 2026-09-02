@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart | Corevex Computing</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="announce">Free freight in the continental US</div>
+  <header class="nav">
+    <a class="logo" href="index.html">COREVEX <b>COMPUTING</b></a>
+    <ul id="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="product.html">Pro 15</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-r">
+      <button class="cart" data-open-cart>Cart <i data-cart-count>0</i></button>
+      <button class="ham" id="menuToggle">☰</button>
+    </div>
+  </header>
+  <div class="wrap page">
+    <div class="k">Cart</div>
+    <h1 style="font-family:var(--display);font-size:42px;margin:8px 0 24px">Your bag</h1>
+    <div class="chk">
+      <div id="cartMain"></div>
+      <aside class="side">
+        <h3>Summary</h3>
+        <p style="display:flex;justify-content:space-between;margin:10px 0"><span>Subtotal</span><span id="sub">$0</span></p>
+        <p style="display:flex;justify-content:space-between;margin:10px 0;color:var(--muted)"><span>Shipping</span><span>Free</span></p>
+        <p style="display:flex;justify-content:space-between;margin:16px 0;font-size:20px;font-weight:800"><span>Total</span><span id="tot">$0</span></p>
+        <a class="btn btn-p" href="checkout.html" style="width:100%">Checkout</a>
+      </aside>
+    </div>
+  </div>
+  <footer><div class="wrap">900 Silicon Way, Austin, TX 78701 · sales@corevexlaptops.com · +1 512 555 0143</div></footer>
+  <div class="shade" id="drawerBg"></div>
+  <aside class="drawer" id="drawer">
+    <div class="dh"><strong>Cart</strong><button class="btn btn-g" id="drawerClose">Close</button></div>
+    <div class="db" id="drawerBody"></div>
+    <div class="df"><span id="drawerTotal">$0</span><a class="btn btn-p" href="cart.html">View cart</a></div>
+  </aside>
+  <script src="js/app.js"></script>
+  <script>
+    window.renderCartPage = function () {
+      const el = document.getElementById("cartMain");
+      const cart = CVX.load();
+      document.getElementById("sub").textContent = CVX.money(CVX.total());
+      document.getElementById("tot").textContent = CVX.money(CVX.total());
+      if (!cart.length) { el.innerHTML = "<p style='color:var(--muted)'>Cart is empty. <a href='shop.html' style='color:var(--blue)'>Shop laptops</a>.</p>"; return; }
+      el.innerHTML = cart.map(i => `<div class="ci">
+        <img src="${i.img}" alt="${i.name}">
+        <div><strong>${i.name}</strong><div style="color:var(--muted);font-size:13px">${i.config}</div></div>
+        <div><button class="btn btn-g" data-q="${i.key}" data-d="-1">−</button> ${i.qty} <button class="btn btn-g" data-q="${i.key}" data-d="1">+</button></div>
+        <div>${CVX.money(i.price*i.qty)}<br><button class="btn btn-g" data-rm="${i.key}">Remove</button></div>
+      </div>`).join("");
+      el.querySelectorAll("[data-rm]").forEach(b => b.onclick = () => CVX.remove(b.dataset.rm));
+      el.querySelectorAll("[data-q]").forEach(b => {
+        b.onclick = () => { const item = CVX.load().find(x => x.key === b.dataset.q); CVX.updateQty(b.dataset.q, item.qty + Number(b.dataset.d)); };
+      });
+    };
+    document.addEventListener("DOMContentLoaded", () => window.renderCartPage());
+  </script>
+</body>
+</html>

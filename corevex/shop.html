@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Laptops | Corevex Computing</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="announce">Free 2-day shipping in the US · 3-year warranty on Pro series</div>
+  <header class="nav">
+    <a class="logo" href="index.html">COREVEX <b>COMPUTING</b></a>
+    <ul id="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a class="on" href="shop.html">Shop</a></li>
+      <li><a href="product.html">Pro 15</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-r">
+      <button class="cart" data-open-cart>Cart <i data-cart-count>0</i></button>
+      <button class="ham" id="menuToggle">☰</button>
+    </div>
+  </header>
+  <div class="wrap page">
+    <div class="k">Shop</div>
+    <h1 style="font-family:var(--display);font-size:48px;margin:8px 0 8px">All Corevex laptops</h1>
+    <p style="color:var(--muted);max-width:520px;margin-bottom:28px">Filter by how you work. Every chassis shares Austin-milled graphite and the same thermal spine.</p>
+    <div class="shop">
+      <aside class="filters">
+        <strong>Use case</strong>
+        <button class="on" data-filter="all">All</button>
+        <button data-filter="gaming">Gaming</button>
+        <button data-filter="business">Business</button>
+        <button data-filter="creator">Creator</button>
+      </aside>
+      <div class="cards" id="shopGrid"></div>
+    </div>
+  </div>
+  <footer>
+    <div class="wrap">
+      <div class="fg">
+        <div><a class="logo" href="index.html">COREVEX <b>COMPUTING</b></a><p style="margin-top:10px">900 Silicon Way, Austin, TX 78701<br>sales@corevexlaptops.com · +1 512 555 0143</p></div>
+        <div><h4>Shop</h4><a href="shop.html">All laptops</a><a href="product.html">Pro 15</a></div>
+        <div><h4>Help</h4><a href="support.html">Support</a><a href="contact.html">Contact</a></div>
+        <div><h4>Cart</h4><a href="cart.html">View cart</a><a href="checkout.html">Checkout</a></div>
+      </div>
+      <div>© 2026 Corevex Computing.</div>
+    </div>
+  </footer>
+  <div class="shade" id="drawerBg"></div>
+  <aside class="drawer" id="drawer">
+    <div class="dh"><strong>Cart</strong><button class="btn btn-g" id="drawerClose">Close</button></div>
+    <div class="db" id="drawerBody"></div>
+    <div class="df"><span id="drawerTotal">$0</span><a class="btn btn-p" href="cart.html">View cart</a></div>
+  </aside>
+  <script src="js/app.js"></script>
+  <script>
+    const items = [
+      { id:"pro-15", cat:"business", name:"Pro 15", tag:"Business", price:"From $2,299", href:"product.html", img:"https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80", desc:"Flagship 15-inch workstation." },
+      { id:"forge-17", cat:"gaming", name:"Forge 17", tag:"Gaming", price:"From $2,799", href:"shop.html", img:"https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=900&q=80", desc:"17-inch vapor-chamber gaming." },
+      { id:"pulse-14", cat:"creator", name:"Pulse 14", tag:"Creator", price:"From $1,899", href:"shop.html", img:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80", desc:"Travel-light color-true panel." },
+      { id:"apex-16", cat:"gaming", name:"Apex 16", tag:"Gaming", price:"From $2,499", href:"shop.html", img:"https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&w=900&q=80", desc:"240Hz competitive chassis." },
+      { id:"studio-x", cat:"creator", name:"Studio X", tag:"Creator", price:"From $2,599", href:"shop.html", img:"https://images.unsplash.com/photo-1517059224940-d4af9eec41e5?auto=format&fit=crop&w=900&q=80", desc:"Mini-LED master display." },
+      { id:"field-13", cat:"business", name:"Field 13", tag:"Business", price:"From $1,699", href:"shop.html", img:"https://images.unsplash.com/photo-1484788984921-03950022c9ef?auto=format&fit=crop&w=900&q=80", desc:"Compact encrypted field unit." }
+    ];
+    const grid = document.getElementById("shopGrid");
+    function draw(cat) {
+      grid.innerHTML = items.filter(i => cat==="all" || i.cat===cat).map(i => `
+        <article class="card">
+          <img src="${i.img}" alt="Corevex ${i.name}">
+          <div class="b">
+            <div class="tag">${i.tag}</div>
+            <h3>${i.name}</h3>
+            <p>${i.desc}</p>
+            <div class="pr">${i.price}</div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <a class="btn btn-p" href="${i.href}">${i.id==="pro-15"?"Configure":"Details"}</a>
+              <button class="btn btn-g" data-add="${i.id}">Add</button>
+            </div>
+          </div>
+        </article>`).join("");
+      document.querySelectorAll("[data-add]").forEach(btn => {
+        btn.onclick = () => {
+          const p = CVX.PRODUCTS[btn.getAttribute("data-add")];
+          CVX.add({id:p.id,name:p.name,price:p.base,img:p.img,qty:1,config:"Base"});
+          CVX.openDrawer();
+        };
+      });
+    }
+    draw("all");
+    document.querySelectorAll(".filters button").forEach(b => {
+      b.onclick = () => {
+        document.querySelectorAll(".filters button").forEach(x => x.classList.remove("on"));
+        b.classList.add("on");
+        draw(b.dataset.filter);
+      };
+    });
+  </script>
+</body>
+</html>

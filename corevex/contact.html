@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Corevex Computing</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="logo" href="index.html">COREVEX <b>COMPUTING</b></a>
+    <ul id="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="product.html">Pro 15</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a class="on" href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-r">
+      <button class="cart" data-open-cart>Cart <i data-cart-count>0</i></button>
+      <button class="ham" id="menuToggle">☰</button>
+    </div>
+  </header>
+  <div class="wrap page">
+    <div class="k">Visit</div>
+    <h1 style="font-family:var(--display);font-size:42px;margin:8px 0 24px">Silicon Way, Austin.</h1>
+    <div class="ct">
+      <div class="map">
+        <div>
+          <strong>Corevex Computing</strong>
+          <p>900 Silicon Way<br>Austin, TX 78701, USA</p>
+          <p>sales@corevexlaptops.com<br>+1 512 555 0143</p>
+        </div>
+      </div>
+      <form class="buy" id="cf" style="position:static">
+        <h3>Write the floor</h3>
+        <label>Name</label><input required>
+        <label>Email</label><input type="email" required>
+        <label>Message</label><textarea required rows="5"></textarea>
+        <button class="btn btn-p" style="margin-top:14px">Send</button>
+        <p class="toast" id="ok"></p>
+      </form>
+    </div>
+  </div>
+  <footer><div class="wrap">© 2026 Corevex Computing. Hours: Mon–Fri 09:00–18:00 CT.</div></footer>
+  <div class="shade" id="drawerBg"></div>
+  <aside class="drawer" id="drawer">
+    <div class="dh"><strong>Cart</strong><button class="btn btn-g" id="drawerClose">Close</button></div>
+    <div class="db" id="drawerBody"></div>
+    <div class="df"><span id="drawerTotal">$0</span><a class="btn btn-p" href="cart.html">View cart</a></div>
+  </aside>
+  <script src="js/app.js"></script>
+  <script>
+    document.getElementById("cf").onsubmit = (e) => { e.preventDefault(); document.getElementById("ok").textContent = "Received. Austin replies within one business day."; e.target.reset(); };
+  </script>
+</body>
+</html>

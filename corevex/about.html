@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Corevex Computing</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="logo" href="index.html">COREVEX <b>COMPUTING</b></a>
+    <ul id="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="product.html">Pro 15</a></li>
+      <li><a class="on" href="about.html">About</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-r">
+      <button class="cart" data-open-cart>Cart <i data-cart-count>0</i></button>
+      <button class="ham" id="menuToggle">☰</button>
+    </div>
+  </header>
+  <section class="split">
+    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1400&q=80" alt="Corevex Austin engineering floor">
+    <div class="t">
+      <div class="k">Austin, Texas</div>
+      <h3>We mill machines, not marketing decks.</h3>
+      <p>Corevex was founded by thermal engineers who left larger OEMs to build laptops that hold turbo without sounding like a turbine. The factory sits at 900 Silicon Way.</p>
+    </div>
+  </section>
+  <div class="wrap page">
+    <h2>A short history</h2>
+    <p style="margin:16px 0;color:var(--muted)"><strong>2016</strong> — Three engineers prototype a vapor-chamber 15-inch in a rented garage.</p>
+    <p style="margin:16px 0;color:var(--muted)"><strong>2019</strong> — First CNC graphite run. 400 units. Sold out in nine days.</p>
+    <p style="margin:16px 0;color:var(--muted)"><strong>2023</strong> — Horizon silicon partnership. Sustained 120W becomes a product promise.</p>
+    <p style="margin:16px 0;color:var(--muted)"><strong>2026</strong> — Pro 15 ships with Mini-LED and a 22-hour mixed battery. Still assembled in Austin.</p>
+  </div>
+  <footer>
+    <div class="wrap">
+      <div class="fg">
+        <div><a class="logo" href="index.html">COREVEX <b>COMPUTING</b></a><p style="margin-top:10px">900 Silicon Way, Austin, TX 78701</p></div>
+        <div><h4>Contact</h4><p>sales@corevexlaptops.com</p><p>+1 512 555 0143</p></div>
+        <div><h4>Shop</h4><a href="shop.html">Lineup</a><a href="product.html">Pro 15</a></div>
+        <div><h4>Help</h4><a href="support.html">Support</a><a href="contact.html">Visit</a></div>
+      </div>
+      <div>© 2026 Corevex Computing.</div>
+    </div>
+  </footer>
+  <div class="shade" id="drawerBg"></div>
+  <aside class="drawer" id="drawer">
+    <div class="dh"><strong>Cart</strong><button class="btn btn-g" id="drawerClose">Close</button></div>
+    <div class="db" id="drawerBody"></div>
+    <div class="df"><span id="drawerTotal">$0</span><a class="btn btn-p" href="cart.html">View cart</a></div>
+  </aside>
+  <script src="js/app.js"></script>
+</body>
+</html>
